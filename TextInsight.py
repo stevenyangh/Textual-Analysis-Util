@@ -26,12 +26,19 @@ def cutSentence(word_list):
 # def makeHierarchyAccordForm(word_list_gen, root_trace, level_method_gen):
 
 
-def makeWordVector(text):
-    wordSet = set(text)
-    wordList = []
-    for index in range(len(wordSet))
-        wordList.append(pop(wordSet))
-    for word in text
+def findWordN(word, text_token):
+    count = 0
+    for t in text_tocken:
+        if t == word:
+            count = count + 1
+
+
+def makeWordVector(text_token):
+    wordSet = set(text_token)
+    wordList = dict()
+    for index in range(len(wordSet)):
+        wordList[pop(wordSet)] = 0
+    for  
 
 def generateGraph():
     yield 0
