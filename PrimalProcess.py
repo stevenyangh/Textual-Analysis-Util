@@ -15,3 +15,5 @@ def is_sentence_mark(word):
         if character == '.':
             return True
     return False
+
+def applyRules(
