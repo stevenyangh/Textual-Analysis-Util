@@ -1,13 +1,34 @@
-class Sentence_Node:
-    def __init__(self,):
-        self = {"text": [], "type": "sentence", "children": []}
+# _*_ encoding = unicode _*_
+import jieba
+
+def create_node():
+    return {"identity": [0], "text": [], "type": "sentence", "children": [], "property": {}}
+
+
+def gen_root_id():
+
+def trans_node_my_tree(root_n, node):
+    return {"name" : node["text"], "value" : }
+
+def add_child(node, child):
+    node["children"].append(child)
+
+
+def is_number(word):
+    if (word[0] > '0') and (word[0] < '9'):
+        return True
+    else:
+        return False
 
 
 def is_sentence_mark(word):
-    for character in word:
-        if character == '.':
-            return True
-    return False
+    if is_number(word):
+        for letter in word:
+            if (letter == '。') or (letter == '?') or (letter == '!') or (letter == '.') or (letter == '\n'):
+                return True
+        return False
+    else:
+        return False
 
 
 def is_paragraph_mark(word):
@@ -17,30 +38,34 @@ def is_paragraph_mark(word):
     return False
 
 
-def cutSentence(word_list):
-    sent = Sentence_Node()
+def is_empty(sent_token):
+    for word in sent_token:
+        for cha in word:
+            if cha != ' ' and cha != '\n' and cha != '\0':
+                return False
+    return True
+
+
+def cut_sentence(word_list):
+    count = 0
+    sent = create_node()
     for word in word_list:
         sent["text"].append(word)
         if is_sentence_mark(word):
+            count = count + 1
+            sent["identity"][0] = count
             yield sent
+            sent = create_node()
+    if not is_empty(sent["text"])
+        yield sent
 # def makeHierarchyAccordForm(word_list_gen, root_trace, level_method_gen):
 
 
-def findWordN(word, text_token):
-    count = 0
-    for t in text_tocken:
-        if t == word:
-            count = count + 1
+def merge_tree():
 
 
-def makeWordVector(text_token):
-    wordSet = set(text_token)
-    wordList = dict()
-    for index in range(len(wordSet)):
-        wordList[pop(wordSet)] = 0
-    for  
+def generate_graph():
 
-def generateGraph():
     yield 0
 
 
